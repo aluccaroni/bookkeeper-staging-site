@@ -1,0 +1,1 @@
+/usr/java/current11/bin/javadoc @options

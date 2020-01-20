@@ -44,7 +44,7 @@
         <a class="navbar-link">Documentation</a>
         <div class="navbar-dropdown is-boxed">
           <a class="navbar-item" href="/bookkeeper-staging-site/docs/latest/overview/overview">
-            Version 4.8.0-SNAPSHOT
+            Version 4.11.0-SNAPSHOT
             <span class="tag is-warning">Development</span>
           </a>
           <a class="navbar-item" href="/bookkeeper-staging-site/docs/latest/api/javadoc">
@@ -55,9 +55,64 @@
           </a>
           <hr class="dropdown-divider">
           
+          <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.10.0/overview/overview">
+            Release 4.10.0
+            
+          </a>
+          
+          <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.9.2/overview/overview">
+            Release 4.9.2
+            <span class="tag is-success">Stable</span>
+          </a>
+          
+          <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.9.1/overview/overview">
+            Release 4.9.1
+            
+          </a>
+          
+          <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.9.0/overview/overview">
+            Release 4.9.0
+            
+          </a>
+          
+          <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.8.2/overview/overview">
+            Release 4.8.2
+            
+          </a>
+          
+          <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.8.1/overview/overview">
+            Release 4.8.1
+            
+          </a>
+          
+          <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.8.0/overview/overview">
+            Release 4.8.0
+            
+          </a>
+          
+          <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.7.3/overview/overview">
+            Release 4.7.3
+            
+          </a>
+          
+          <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.7.2/overview/overview">
+            Release 4.7.2
+            
+          </a>
+          
+          <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.7.1/overview/overview">
+            Release 4.7.1
+            
+          </a>
+          
+          <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.7.0/overview/overview">
+            Release 4.7.0
+            
+          </a>
+          
           <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.6.2/overview/overview">
             Release 4.6.2
-            <span class="tag is-success">Stable</span>
+            
           </a>
           
           <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.6.1/overview/overview">
@@ -312,6 +367,13 @@
     <li>
       <a href="../../admin/http">
       BookKeeper Admin REST API
+      </a>
+    </li>
+    
+    
+    <li>
+      <a href="../../admin/decomission">
+      Decommissioning Bookies
       </a>
     </li>
     
@@ -571,6 +633,43 @@ To use this feature, set <code class="highlighter-rouge">httpServerEnabled</code
   </span><span class="p">}</span><span class="w">
 </span></code></pre></div>        </div>
       </li>
+      <li>
+        <p>Response:</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align: left">Code</th>
+              <th style="text-align: left">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: left">200</td>
+              <td style="text-align: left">Successful operation</td>
+            </tr>
+            <tr>
+              <td style="text-align: left">403</td>
+              <td style="text-align: left">Permission denied</td>
+            </tr>
+            <tr>
+              <td style="text-align: left">404</td>
+              <td style="text-align: left">Not found</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="config-1">Config</h2>
+
+<h3 id="endpoint-metrics">Endpoint: /metrics</h3>
+<ol>
+  <li>Method: GET
+    <ul>
+      <li>Description: Get all metrics by calling <code class="highlighter-rouge">writeAllMetrics()</code> of <code class="highlighter-rouge">statsProvider</code> internally</li>
       <li>
         <p>Response:</p>
 
@@ -1139,6 +1238,209 @@ To use this feature, set <code class="highlighter-rouge">httpServerEnabled</code
   </li>
 </ol>
 
+<h3 id="endpoint-apiv1bookiegc">Endpoint: /api/v1/bookie/gc</h3>
+<ol>
+  <li>Method: PUT
+    <ul>
+      <li>Description:  trigger gc for this bookie.</li>
+      <li>
+        <p>Response:</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align: left">Code</th>
+              <th style="text-align: left">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: left">200</td>
+              <td style="text-align: left">Successful operation</td>
+            </tr>
+            <tr>
+              <td style="text-align: left">403</td>
+              <td style="text-align: left">Permission denied</td>
+            </tr>
+            <tr>
+              <td style="text-align: left">404</td>
+              <td style="text-align: left">Not found</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ul>
+  </li>
+  <li>Method: GET
+    <ul>
+      <li>Description:  whether force triggered Garbage Collection is running or not for this bookie. true for is running.</li>
+      <li>
+        <p>Response:</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align: left">Code</th>
+              <th style="text-align: left">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: left">200</td>
+              <td style="text-align: left">Successful operation</td>
+            </tr>
+            <tr>
+              <td style="text-align: left">403</td>
+              <td style="text-align: left">Permission denied</td>
+            </tr>
+            <tr>
+              <td style="text-align: left">404</td>
+              <td style="text-align: left">Not found</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>Body:
+        <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"is_in_force_gc"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"false"</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="endpoint-apiv1bookiegc_details">Endpoint: /api/v1/bookie/gc_details</h3>
+<ol>
+  <li>Method: GET
+    <ul>
+      <li>Description:  get details of Garbage Collection Thread, like whether it is in compacting, last compaction time, compaction counter, etc.</li>
+      <li>
+        <p>Response:</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align: left">Code</th>
+              <th style="text-align: left">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: left">200</td>
+              <td style="text-align: left">Successful operation</td>
+            </tr>
+            <tr>
+              <td style="text-align: left">403</td>
+              <td style="text-align: left">Permission denied</td>
+            </tr>
+            <tr>
+              <td style="text-align: left">404</td>
+              <td style="text-align: left">Not found</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>Body:
+        <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"forceCompacting"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"majorCompacting"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"minorCompacting"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"lastMajorCompactionTime"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1544578144944</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"lastMinorCompactionTime"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1544578144944</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"majorCompactionCounter"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"minorCompactionCounter"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+  </span><span class="p">}</span><span class="w"> </span><span class="p">]</span><span class="w">
+</span></code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="endpoint-apiv1bookiestate">Endpoint: /api/v1/bookie/state</h3>
+<ol>
+  <li>Method: GET
+    <ul>
+      <li>Description:  Exposes the current state of bookie</li>
+      <li>
+        <p>Response:</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align: left">Code</th>
+              <th style="text-align: left">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: left">200</td>
+              <td style="text-align: left">Successful operation</td>
+            </tr>
+            <tr>
+              <td style="text-align: left">403</td>
+              <td style="text-align: left">Permission denied</td>
+            </tr>
+            <tr>
+              <td style="text-align: left">404</td>
+              <td style="text-align: left">Not found</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>Body:
+        <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"running"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"readOnly"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"shuttingDown"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"availableForHighPriorityWrites"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="endpoint-apiv1bookieis_ready">Endpoint: /api/v1/bookie/is_ready</h3>
+<ol>
+  <li>Method: GET
+    <ul>
+      <li>Description:  Return true if the bookie is ready</li>
+      <li>
+        <p>Response:</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align: left">Code</th>
+              <th style="text-align: left">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: left">200</td>
+              <td style="text-align: left">Successful operation</td>
+            </tr>
+            <tr>
+              <td style="text-align: left">403</td>
+              <td style="text-align: left">Permission denied</td>
+            </tr>
+            <tr>
+              <td style="text-align: left">404</td>
+              <td style="text-align: left">Not found</td>
+            </tr>
+            <tr>
+              <td style="text-align: left">503</td>
+              <td style="text-align: left">Bookie is not ready</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>Body: <empty></empty></li>
+    </ul>
+  </li>
+</ol>
+
 <h2 id="auto-recovery">Auto recovery</h2>
 
 <h3 id="endpoint-apiv1autorecoverybookie">Endpoint: /api/v1/autorecovery/bookie/</h3>
@@ -1541,6 +1843,8 @@ To use this feature, set <code class="highlighter-rouge">httpServerEnabled</code
 <li class="toc-entry toc-h3"><a href="#endpoint-heartbeat">Endpoint: /heartbeat</a></li>
 <li class="toc-entry toc-h2"><a href="#config">Config</a></li>
 <li class="toc-entry toc-h3"><a href="#endpoint-apiv1configserver_config">Endpoint: /api/v1/config/server_config</a></li>
+<li class="toc-entry toc-h2"><a href="#config-1">Config</a></li>
+<li class="toc-entry toc-h3"><a href="#endpoint-metrics">Endpoint: /metrics</a></li>
 <li class="toc-entry toc-h2"><a href="#ledger">Ledger</a></li>
 <li class="toc-entry toc-h3"><a href="#endpoint-apiv1ledgerdeleteledger_idledger_id">Endpoint: /api/v1/ledger/delete/?ledger_id=<ledger_id></a></li>
 <li class="toc-entry toc-h3"><a href="#endpoint-apiv1ledgerlistprint_metadatametadata">Endpoint: /api/v1/ledger/list/?print_metadata=<metadata></a></li>
@@ -1552,6 +1856,10 @@ To use this feature, set <code class="highlighter-rouge">httpServerEnabled</code
 <li class="toc-entry toc-h3"><a href="#endpoint-apiv1bookielast_log_mark">Endpoint: /api/v1/bookie/last_log_mark</a></li>
 <li class="toc-entry toc-h3"><a href="#endpoint-apiv1bookielist_disk_filefile_typetype">Endpoint: /api/v1/bookie/list_disk_file/?file_type=<type></a></li>
 <li class="toc-entry toc-h3"><a href="#endpoint-apiv1bookieexpand_storage">Endpoint: /api/v1/bookie/expand_storage</a></li>
+<li class="toc-entry toc-h3"><a href="#endpoint-apiv1bookiegc">Endpoint: /api/v1/bookie/gc</a></li>
+<li class="toc-entry toc-h3"><a href="#endpoint-apiv1bookiegc_details">Endpoint: /api/v1/bookie/gc_details</a></li>
+<li class="toc-entry toc-h3"><a href="#endpoint-apiv1bookiestate">Endpoint: /api/v1/bookie/state</a></li>
+<li class="toc-entry toc-h3"><a href="#endpoint-apiv1bookieis_ready">Endpoint: /api/v1/bookie/is_ready</a></li>
 <li class="toc-entry toc-h2"><a href="#auto-recovery">Auto recovery</a></li>
 <li class="toc-entry toc-h3"><a href="#endpoint-apiv1autorecoverybookie">Endpoint: /api/v1/autorecovery/bookie/</a></li>
 <li class="toc-entry toc-h3"><a href="#endpoint-apiv1autorecoverylist_under_replicated_ledgermissingreplicabookie_addressexcludingmissingreplicabookie_address">Endpoint: /api/v1/autorecovery/list_under_replicated_ledger/?missingreplica=<bookie_address>&excludingmissingreplica=<bookie_address></a></li>
@@ -1593,6 +1901,13 @@ To use this feature, set <code class="highlighter-rouge">httpServerEnabled</code
 </div>
 
 <div id="striping-popover-html" class="popover-template">
+  <p>Striping is the process of distributing BookKeeper ledgers to sub-groups of bookies rather than to all bookies in a BookKeeper ensemble.</p>
+
+<p>Striping is essential to ensuring fast performance.</p>
+
+</div>
+
+<div id="striped-popover-html" class="popover-template">
   <p>Striping is the process of distributing BookKeeper ledgers to sub-groups of bookies rather than to all bookies in a BookKeeper ensemble.</p>
 
 <p>Striping is essential to ensuring fast performance.</p>
@@ -1647,6 +1962,12 @@ tippy('#striping-popover', {
   animation: 'fade'
 });
 
+tippy('#striped-popover', {
+  html: '#striped-popover-html',
+  arrow: true,
+  animation: 'fade'
+});
+
 tippy('#journal-popover', {
   html: '#journal-popover-html',
   arrow: true,
@@ -1673,7 +1994,10 @@ tippy('#record-popover', {
   <div class="container">
     <div class="content has-text-centered">
       <p>
-        Copyright &copy; 2016 - 2018 <a href="https://www.apache.org/">The Apache Software Foundation</a>,<br /> licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, version 2.0</a>.
+        Copyright &copy; 2016 - 2020 <a href="https://www.apache.org/">The Apache Software Foundation</a>,<br /> licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, version 2.0</a>.
+      </p>
+      <p>
+        Apache BookKeeper, BookKeeper®, Apache®, the Apache feature logo, and the Apache BookKeeper logo are either registered trademarks or trademarks of The Apache Software Foundation.
       </p>
     </div>
   </div>

@@ -44,7 +44,7 @@
         <a class="navbar-link">Documentation</a>
         <div class="navbar-dropdown is-boxed">
           <a class="navbar-item" href="/bookkeeper-staging-site/docs/latest/overview/overview">
-            Version 4.8.0-SNAPSHOT
+            Version 4.11.0-SNAPSHOT
             <span class="tag is-warning">Development</span>
           </a>
           <a class="navbar-item" href="/bookkeeper-staging-site/docs/latest/api/javadoc">
@@ -55,9 +55,64 @@
           </a>
           <hr class="dropdown-divider">
           
+          <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.10.0/overview/overview">
+            Release 4.10.0
+            
+          </a>
+          
+          <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.9.2/overview/overview">
+            Release 4.9.2
+            <span class="tag is-success">Stable</span>
+          </a>
+          
+          <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.9.1/overview/overview">
+            Release 4.9.1
+            
+          </a>
+          
+          <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.9.0/overview/overview">
+            Release 4.9.0
+            
+          </a>
+          
+          <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.8.2/overview/overview">
+            Release 4.8.2
+            
+          </a>
+          
+          <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.8.1/overview/overview">
+            Release 4.8.1
+            
+          </a>
+          
+          <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.8.0/overview/overview">
+            Release 4.8.0
+            
+          </a>
+          
+          <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.7.3/overview/overview">
+            Release 4.7.3
+            
+          </a>
+          
+          <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.7.2/overview/overview">
+            Release 4.7.2
+            
+          </a>
+          
+          <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.7.1/overview/overview">
+            Release 4.7.1
+            
+          </a>
+          
+          <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.7.0/overview/overview">
+            Release 4.7.0
+            
+          </a>
+          
           <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.6.2/overview/overview">
             Release 4.6.2
-            <span class="tag is-success">Stable</span>
+            
           </a>
           
           <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.6.1/overview/overview">
@@ -315,6 +370,13 @@
       </a>
     </li>
     
+    
+    <li>
+      <a href="../../admin/decomission">
+      Decommissioning Bookies
+      </a>
+    </li>
+    
   </ul>
   
   <p>
@@ -530,7 +592,7 @@
 
 <h5>Usage</h5>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bookkeeper-server/bin/bookkeeper bookie 
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bin/bookkeeper bookie 
 </code></pre></div></div>
 <hr />
 
@@ -540,7 +602,7 @@
 
 <h5>Usage</h5>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bookkeeper-server/bin/bookkeeper localbookie N
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bin/bookkeeper localbookie N
 </code></pre></div></div>
 <hr />
 
@@ -550,7 +612,7 @@
 
 <h5>Usage</h5>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bookkeeper-server/bin/bookkeeper autorecovery 
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bin/bookkeeper autorecovery 
 </code></pre></div></div>
 <hr />
 
@@ -560,7 +622,7 @@
 
 <h5>Usage</h5>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bookkeeper-server/bin/bookkeeper upgrade 
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bin/bookkeeper upgrade 
 </code></pre></div></div>
 <hr />
 
@@ -570,7 +632,7 @@
 
 <h5>Usage</h5>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bookkeeper-server/bin/bookkeeper shell 
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bin/bookkeeper shell 
 </code></pre></div></div>
 <hr />
 
@@ -580,7 +642,7 @@
 
 <h5>Usage</h5>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bookkeeper-server/bin/bookkeeper <span class="nb">help</span> 
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bin/bookkeeper <span class="nb">help</span> 
 </code></pre></div></div>
 
 <h2 id="the-bookkeeper-shell">The BookKeeper shell</h2>
@@ -591,7 +653,7 @@
 
 <h5>Usage</h5>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bookkeeper-server/bin/bookkeeper shell autorecovery <span class="se">\</span>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bin/bookkeeper shell autorecovery <span class="se">\</span>
   &lt;options&gt;
 </code></pre></div></div>
 
@@ -627,7 +689,7 @@
 
 <h5>Usage</h5>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bookkeeper-server/bin/bookkeeper shell bookieformat <span class="se">\</span>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bin/bookkeeper shell bookieformat <span class="se">\</span>
   &lt;options&gt;
 </code></pre></div></div>
 
@@ -672,7 +734,7 @@ the bookie server, use <code class="highlighter-rouge">bookieformat</code>.</p>
 
 <h5>Usage</h5>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bookkeeper-server/bin/bookkeeper shell initbookie
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bin/bookkeeper shell initbookie
 </code></pre></div></div>
 
 <p><!-- if command.options --></p>
@@ -684,7 +746,7 @@ the bookie server, use <code class="highlighter-rouge">bookieformat</code>.</p>
 
 <h5>Usage</h5>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bookkeeper-server/bin/bookkeeper shell bookieinfo
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bin/bookkeeper shell bookieinfo
 </code></pre></div></div>
 
 <p><!-- if command.options --></p>
@@ -696,7 +758,7 @@ the bookie server, use <code class="highlighter-rouge">bookieformat</code>.</p>
 
 <h5>Usage</h5>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bookkeeper-server/bin/bookkeeper shell bookiesanity <span class="se">\</span>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bin/bookkeeper shell bookiesanity <span class="se">\</span>
   &lt;options&gt;
 </code></pre></div></div>
 
@@ -732,7 +794,7 @@ the bookie server, use <code class="highlighter-rouge">bookieformat</code>.</p>
 
 <h5>Usage</h5>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bookkeeper-server/bin/bookkeeper shell decommissionbookie
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bin/bookkeeper shell decommissionbookie
 </code></pre></div></div>
 
 <p><!-- if command.options --></p>
@@ -744,7 +806,7 @@ the bookie server, use <code class="highlighter-rouge">bookieformat</code>.</p>
 
 <h5>Usage</h5>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bookkeeper-server/bin/bookkeeper shell deleteledger <span class="se">\</span>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bin/bookkeeper shell deleteledger <span class="se">\</span>
   &lt;options&gt;
 </code></pre></div></div>
 
@@ -780,7 +842,7 @@ the bookie server, use <code class="highlighter-rouge">bookieformat</code>.</p>
 
 <h5>Usage</h5>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bookkeeper-server/bin/bookkeeper shell expandstorage
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bin/bookkeeper shell expandstorage
 </code></pre></div></div>
 
 <p><!-- if command.options --></p>
@@ -792,7 +854,7 @@ the bookie server, use <code class="highlighter-rouge">bookieformat</code>.</p>
 
 <h5>Usage</h5>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bookkeeper-server/bin/bookkeeper shell <span class="nb">help</span>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bin/bookkeeper shell <span class="nb">help</span>
 </code></pre></div></div>
 
 <p><!-- if command.options --></p>
@@ -804,7 +866,7 @@ the bookie server, use <code class="highlighter-rouge">bookieformat</code>.</p>
 
 <h5>Usage</h5>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bookkeeper-server/bin/bookkeeper shell lastmark
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bin/bookkeeper shell lastmark
 </code></pre></div></div>
 
 <p><!-- if command.options --></p>
@@ -816,7 +878,7 @@ the bookie server, use <code class="highlighter-rouge">bookieformat</code>.</p>
 
 <h5>Usage</h5>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bookkeeper-server/bin/bookkeeper shell ledger <span class="se">\</span>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bin/bookkeeper shell ledger <span class="se">\</span>
   &lt;options&gt;
 </code></pre></div></div>
 
@@ -847,7 +909,7 @@ the bookie server, use <code class="highlighter-rouge">bookieformat</code>.</p>
 
 <h5>Usage</h5>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bookkeeper-server/bin/bookkeeper shell ledgermetadata <span class="se">\</span>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bin/bookkeeper shell ledgermetadata <span class="se">\</span>
   &lt;options&gt;
 </code></pre></div></div>
 
@@ -878,7 +940,7 @@ the bookie server, use <code class="highlighter-rouge">bookieformat</code>.</p>
 
 <h5>Usage</h5>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bookkeeper-server/bin/bookkeeper shell listbookies <span class="se">\</span>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bin/bookkeeper shell listbookies <span class="se">\</span>
   &lt;options&gt;
 </code></pre></div></div>
 
@@ -919,7 +981,7 @@ the bookie server, use <code class="highlighter-rouge">bookieformat</code>.</p>
 
 <h5>Usage</h5>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bookkeeper-server/bin/bookkeeper shell listfilesondisc <span class="se">\</span>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bin/bookkeeper shell listfilesondisc <span class="se">\</span>
   &lt;options&gt;
 </code></pre></div></div>
 
@@ -960,7 +1022,7 @@ the bookie server, use <code class="highlighter-rouge">bookieformat</code>.</p>
 
 <h5>Usage</h5>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bookkeeper-server/bin/bookkeeper shell listledgers <span class="se">\</span>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bin/bookkeeper shell listledgers <span class="se">\</span>
   &lt;options&gt;
 </code></pre></div></div>
 
@@ -991,7 +1053,7 @@ the bookie server, use <code class="highlighter-rouge">bookieformat</code>.</p>
 
 <h5>Usage</h5>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bookkeeper-server/bin/bookkeeper shell listunderreplicated <span class="se">\</span>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bin/bookkeeper shell listunderreplicated <span class="se">\</span>
   &lt;options&gt;
 </code></pre></div></div>
 
@@ -1033,7 +1095,7 @@ in favor of using <code class="highlighter-rouge">initnewcluster</code> for init
 
 <h5>Usage</h5>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bookkeeper-server/bin/bookkeeper shell metaformat <span class="se">\</span>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bin/bookkeeper shell metaformat <span class="se">\</span>
   &lt;options&gt;
 </code></pre></div></div>
 
@@ -1070,7 +1132,7 @@ existing cluster by running nukeexistingcluster before running initnewcluster ag
 
 <h5>Usage</h5>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bookkeeper-server/bin/bookkeeper shell initnewcluster
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bin/bookkeeper shell initnewcluster
 </code></pre></div></div>
 
 <p><!-- if command.options --></p>
@@ -1082,7 +1144,7 @@ existing cluster by running nukeexistingcluster before running initnewcluster ag
 
 <h5>Usage</h5>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bookkeeper-server/bin/bookkeeper shell nukeexistingcluster <span class="se">\</span>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bin/bookkeeper shell nukeexistingcluster <span class="se">\</span>
   &lt;options&gt;
 </code></pre></div></div>
 
@@ -1123,7 +1185,7 @@ existing cluster by running nukeexistingcluster before running initnewcluster ag
 
 <h5>Usage</h5>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bookkeeper-server/bin/bookkeeper shell lostbookierecoverydelay <span class="se">\</span>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bin/bookkeeper shell lostbookierecoverydelay <span class="se">\</span>
   &lt;options&gt;
 </code></pre></div></div>
 
@@ -1159,7 +1221,7 @@ existing cluster by running nukeexistingcluster before running initnewcluster ag
 
 <h5>Usage</h5>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bookkeeper-server/bin/bookkeeper shell readjournal <span class="se">\</span>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bin/bookkeeper shell readjournal <span class="se">\</span>
   &lt;options&gt;
 </code></pre></div></div>
 
@@ -1195,7 +1257,7 @@ existing cluster by running nukeexistingcluster before running initnewcluster ag
 
 <h5>Usage</h5>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bookkeeper-server/bin/bookkeeper shell readledger <span class="se">\</span>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bin/bookkeeper shell readledger <span class="se">\</span>
   &lt;ledger_id&gt; <span class="o">[</span>&lt;start_entry_id&gt; <span class="o">[</span>&lt;end_entry_id&gt;]]
 </code></pre></div></div>
 
@@ -1208,7 +1270,7 @@ existing cluster by running nukeexistingcluster before running initnewcluster ag
 
 <h5>Usage</h5>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bookkeeper-server/bin/bookkeeper shell readlog <span class="se">\</span>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bin/bookkeeper shell readlog <span class="se">\</span>
   &lt;entry_log_id | entry_log_file_name&gt; <span class="se">\</span>
   &lt;options&gt;
 </code></pre></div></div>
@@ -1260,7 +1322,7 @@ existing cluster by running nukeexistingcluster before running initnewcluster ag
 
 <h5>Usage</h5>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bookkeeper-server/bin/bookkeeper shell recover <span class="se">\</span>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bin/bookkeeper shell recover <span class="se">\</span>
   &lt;bookieSrc&gt; <span class="o">[</span>&lt;bookieDest&gt;] <span class="se">\</span>
   &lt;options&gt;
 </code></pre></div></div>
@@ -1292,7 +1354,7 @@ existing cluster by running nukeexistingcluster before running initnewcluster ag
 
 <h5>Usage</h5>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bookkeeper-server/bin/bookkeeper shell simpletest <span class="se">\</span>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bin/bookkeeper shell simpletest <span class="se">\</span>
   &lt;options&gt;
 </code></pre></div></div>
 
@@ -1338,7 +1400,7 @@ existing cluster by running nukeexistingcluster before running initnewcluster ag
 
 <h5>Usage</h5>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bookkeeper-server/bin/bookkeeper shell triggeraudit
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bin/bookkeeper shell triggeraudit
 </code></pre></div></div>
 
 <p><!-- if command.options --></p>
@@ -1350,7 +1412,7 @@ existing cluster by running nukeexistingcluster before running initnewcluster ag
 
 <h5>Usage</h5>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bookkeeper-server/bin/bookkeeper shell updatecookie <span class="se">\</span>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bin/bookkeeper shell updatecookie <span class="se">\</span>
   &lt;options&gt;
 </code></pre></div></div>
 
@@ -1381,7 +1443,7 @@ existing cluster by running nukeexistingcluster before running initnewcluster ag
 
 <h5>Usage</h5>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bookkeeper-server/bin/bookkeeper shell updateledgers <span class="se">\</span>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bin/bookkeeper shell updateledgers <span class="se">\</span>
   &lt;options&gt;
 </code></pre></div></div>
 
@@ -1432,7 +1494,7 @@ existing cluster by running nukeexistingcluster before running initnewcluster ag
 
 <h5>Usage</h5>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bookkeeper-server/bin/bookkeeper shell whoisauditor
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bin/bookkeeper shell whoisauditor
 </code></pre></div></div>
 
 <p><!-- if command.options --></p>
@@ -1444,7 +1506,7 @@ existing cluster by running nukeexistingcluster before running initnewcluster ag
 
 <h5>Usage</h5>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bookkeeper-server/bin/bookkeeper shell whatisinstanceid
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bin/bookkeeper shell whatisinstanceid
 </code></pre></div></div>
 
 <p><!-- if command.options --></p>
@@ -1456,7 +1518,7 @@ existing cluster by running nukeexistingcluster before running initnewcluster ag
 
 <h5>Usage</h5>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bookkeeper-server/bin/bookkeeper shell convert-to-db-storage
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bin/bookkeeper shell convert-to-db-storage
 </code></pre></div></div>
 
 <p><!-- if command.options --></p>
@@ -1468,7 +1530,7 @@ existing cluster by running nukeexistingcluster before running initnewcluster ag
 
 <h5>Usage</h5>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bookkeeper-server/bin/bookkeeper shell convert-to-interleaved-storage
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bin/bookkeeper shell convert-to-interleaved-storage
 </code></pre></div></div>
 
 <p><!-- if command.options --></p>
@@ -1480,7 +1542,7 @@ existing cluster by running nukeexistingcluster before running initnewcluster ag
 
 <h5>Usage</h5>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bookkeeper-server/bin/bookkeeper shell rebuild-db-ledger-locations-index
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bin/bookkeeper shell rebuild-db-ledger-locations-index
 </code></pre></div></div>
 
 <p><!-- if command.options --></p>
@@ -1641,6 +1703,13 @@ existing cluster by running nukeexistingcluster before running initnewcluster ag
 
 </div>
 
+<div id="striped-popover-html" class="popover-template">
+  <p>Striping is the process of distributing BookKeeper ledgers to sub-groups of bookies rather than to all bookies in a BookKeeper ensemble.</p>
+
+<p>Striping is essential to ensuring fast performance.</p>
+
+</div>
+
 <div id="journal-popover-html" class="popover-template">
   <p>A journal file stores BookKeeper transaction logs.</p>
 
@@ -1689,6 +1758,12 @@ tippy('#striping-popover', {
   animation: 'fade'
 });
 
+tippy('#striped-popover', {
+  html: '#striped-popover-html',
+  arrow: true,
+  animation: 'fade'
+});
+
 tippy('#journal-popover', {
   html: '#journal-popover-html',
   arrow: true,
@@ -1715,7 +1790,10 @@ tippy('#record-popover', {
   <div class="container">
     <div class="content has-text-centered">
       <p>
-        Copyright &copy; 2016 - 2018 <a href="https://www.apache.org/">The Apache Software Foundation</a>,<br /> licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, version 2.0</a>.
+        Copyright &copy; 2016 - 2020 <a href="https://www.apache.org/">The Apache Software Foundation</a>,<br /> licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, version 2.0</a>.
+      </p>
+      <p>
+        Apache BookKeeper, BookKeeper®, Apache®, the Apache feature logo, and the Apache BookKeeper logo are either registered trademarks or trademarks of The Apache Software Foundation.
       </p>
     </div>
   </div>

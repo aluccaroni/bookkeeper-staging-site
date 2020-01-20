@@ -44,7 +44,7 @@
         <a class="navbar-link">Documentation</a>
         <div class="navbar-dropdown is-boxed">
           <a class="navbar-item" href="/bookkeeper-staging-site/docs/latest/overview/overview">
-            Version 4.8.0-SNAPSHOT
+            Version 4.11.0-SNAPSHOT
             <span class="tag is-warning">Development</span>
           </a>
           <a class="navbar-item" href="/bookkeeper-staging-site/docs/latest/api/javadoc">
@@ -55,9 +55,64 @@
           </a>
           <hr class="dropdown-divider">
           
+          <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.10.0/overview/overview">
+            Release 4.10.0
+            
+          </a>
+          
+          <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.9.2/overview/overview">
+            Release 4.9.2
+            <span class="tag is-success">Stable</span>
+          </a>
+          
+          <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.9.1/overview/overview">
+            Release 4.9.1
+            
+          </a>
+          
+          <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.9.0/overview/overview">
+            Release 4.9.0
+            
+          </a>
+          
+          <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.8.2/overview/overview">
+            Release 4.8.2
+            
+          </a>
+          
+          <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.8.1/overview/overview">
+            Release 4.8.1
+            
+          </a>
+          
+          <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.8.0/overview/overview">
+            Release 4.8.0
+            
+          </a>
+          
+          <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.7.3/overview/overview">
+            Release 4.7.3
+            
+          </a>
+          
+          <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.7.2/overview/overview">
+            Release 4.7.2
+            
+          </a>
+          
+          <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.7.1/overview/overview">
+            Release 4.7.1
+            
+          </a>
+          
+          <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.7.0/overview/overview">
+            Release 4.7.0
+            
+          </a>
+          
           <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.6.2/overview/overview">
             Release 4.6.2
-            <span class="tag is-success">Stable</span>
+            
           </a>
           
           <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.6.1/overview/overview">
@@ -315,6 +370,13 @@
       </a>
     </li>
     
+    
+    <li>
+      <a href="../../admin/decomission">
+      Decommissioning Bookies
+      </a>
+    </li>
+    
   </ul>
   
   <p>
@@ -473,23 +535,20 @@
 
 <ul>
   <li>the <code class="highlighter-rouge">shell recover</code> option</li>
-  <li>an IP and port for your BookKeeper cluster’s ZooKeeper ensemble</li>
   <li>the IP and port for the failed bookie</li>
 </ul>
 
 <p>Here’s an example:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bookkeeper-server/bin/bookkeeper shell recover <span class="se">\</span>
-  zk1.example.com:2181 <span class="se">\ </span><span class="c"># IP and port for ZooKeeper</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bin/bookkeeper shell recover <span class="se">\</span>
   192.168.1.10:3181      <span class="c"># IP and port for the failed bookie</span>
 </code></pre></div></div>
 
-<p>If you wish, you can also specify which bookie you’d like to rereplicate to. Here’s an example:</p>
+<p>If you wish, you can also specify which ledgers you’d like to recover. Here’s an example:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bookkeeper-server/bin/bookkeeper shell recover <span class="se">\</span>
-  zk1.example.com:2181 <span class="se">\ </span><span class="c"># IP and port for ZooKeeper</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bin/bookkeeper shell recover <span class="se">\</span>
   192.168.1.10:3181 <span class="se">\ </span>   <span class="c"># IP and port for the failed bookie</span>
-  192.168.1.11:3181      <span class="c"># IP and port for the bookie to rereplicate to</span>
+  <span class="nt">--ledger</span> ledgerID      <span class="c"># ledgerID which you want to recover </span>
 </code></pre></div></div>
 
 <h3 id="the-manual-recovery-process">The manual recovery process</h3>
@@ -523,7 +582,7 @@
 
 <p>You can start up AutoRecovery using the <a href="../../reference/cli#bookkeeper-autorecovery"><code class="highlighter-rouge">autorecovery</code></a> command of the <a href="../../reference/cli"><code class="highlighter-rouge">bookkeeper</code></a> CLI tool.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bookkeeper-server/bin/bookkeeper autorecovery
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bin/bookkeeper autorecovery
 </code></pre></div></div>
 
 <blockquote>
@@ -544,12 +603,12 @@
 
 <p>You can disable AutoRecover using the <a href="../../reference/cli#bookkeeper-shell-autorecovery"><code class="highlighter-rouge">bookkeeper</code></a> CLI tool:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bookkeeper-server/bin/bookkeeper shell autorecovery <span class="nt">-disable</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bin/bookkeeper shell autorecovery <span class="nt">-disable</span>
 </code></pre></div></div>
 
 <p>Once disabled, you can reenable AutoRecovery using the <a href="../../reference/cli#bookkeeper-shell-autorecovery"><code class="highlighter-rouge">enable</code></a> shell command:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bookkeeper-server/bin/bookkeeper shell autorecovery <span class="nt">-enable</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bin/bookkeeper shell autorecovery <span class="nt">-enable</span>
 </code></pre></div></div>
 
 <h2 id="autorecovery-architecture">AutoRecovery architecture</h2>
@@ -661,6 +720,13 @@
 
 </div>
 
+<div id="striped-popover-html" class="popover-template">
+  <p>Striping is the process of distributing BookKeeper ledgers to sub-groups of bookies rather than to all bookies in a BookKeeper ensemble.</p>
+
+<p>Striping is essential to ensuring fast performance.</p>
+
+</div>
+
 <div id="journal-popover-html" class="popover-template">
   <p>A journal file stores BookKeeper transaction logs.</p>
 
@@ -709,6 +775,12 @@ tippy('#striping-popover', {
   animation: 'fade'
 });
 
+tippy('#striped-popover', {
+  html: '#striped-popover-html',
+  arrow: true,
+  animation: 'fade'
+});
+
 tippy('#journal-popover', {
   html: '#journal-popover-html',
   arrow: true,
@@ -735,7 +807,10 @@ tippy('#record-popover', {
   <div class="container">
     <div class="content has-text-centered">
       <p>
-        Copyright &copy; 2016 - 2018 <a href="https://www.apache.org/">The Apache Software Foundation</a>,<br /> licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, version 2.0</a>.
+        Copyright &copy; 2016 - 2020 <a href="https://www.apache.org/">The Apache Software Foundation</a>,<br /> licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, version 2.0</a>.
+      </p>
+      <p>
+        Apache BookKeeper, BookKeeper®, Apache®, the Apache feature logo, and the Apache BookKeeper logo are either registered trademarks or trademarks of The Apache Software Foundation.
       </p>
     </div>
   </div>

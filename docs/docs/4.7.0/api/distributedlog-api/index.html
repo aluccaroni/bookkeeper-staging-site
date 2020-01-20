@@ -44,7 +44,7 @@
         <a class="navbar-link">Documentation</a>
         <div class="navbar-dropdown is-boxed">
           <a class="navbar-item" href="/bookkeeper-staging-site/docs/latest/overview/overview">
-            Version 4.8.0-SNAPSHOT
+            Version 4.11.0-SNAPSHOT
             <span class="tag is-warning">Development</span>
           </a>
           <a class="navbar-item" href="/bookkeeper-staging-site/docs/latest/api/javadoc">
@@ -55,9 +55,64 @@
           </a>
           <hr class="dropdown-divider">
           
+          <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.10.0/overview/overview">
+            Release 4.10.0
+            
+          </a>
+          
+          <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.9.2/overview/overview">
+            Release 4.9.2
+            <span class="tag is-success">Stable</span>
+          </a>
+          
+          <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.9.1/overview/overview">
+            Release 4.9.1
+            
+          </a>
+          
+          <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.9.0/overview/overview">
+            Release 4.9.0
+            
+          </a>
+          
+          <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.8.2/overview/overview">
+            Release 4.8.2
+            
+          </a>
+          
+          <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.8.1/overview/overview">
+            Release 4.8.1
+            
+          </a>
+          
+          <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.8.0/overview/overview">
+            Release 4.8.0
+            
+          </a>
+          
+          <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.7.3/overview/overview">
+            Release 4.7.3
+            
+          </a>
+          
+          <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.7.2/overview/overview">
+            Release 4.7.2
+            
+          </a>
+          
+          <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.7.1/overview/overview">
+            Release 4.7.1
+            
+          </a>
+          
+          <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.7.0/overview/overview">
+            Release 4.7.0
+            
+          </a>
+          
           <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.6.2/overview/overview">
             Release 4.6.2
-            <span class="tag is-success">Stable</span>
+            
           </a>
           
           <a class="navbar-item" href="/bookkeeper-staging-site/docs/4.6.1/overview/overview">
@@ -315,6 +370,13 @@
       </a>
     </li>
     
+    
+    <li>
+      <a href="../../admin/decomission">
+      Decommissioning Bookies
+      </a>
+    </li>
+    
   </ul>
   
   <p>
@@ -546,7 +608,7 @@
 
 <h2 id="api">API</h2>
 
-<p>Documentation for the DistributedLog API can be found <a href="https://distributedlog.incubator.apache.org/docs/latest/user_guide/api/core">here</a>.</p>
+<p>Documentation for the DistributedLog API can be found <a href="https://bookkeeper.apache.org/distributedlog/docs/latest/user_guide/api/core">here</a>.</p>
 
 <blockquote>
   <p>At a later date, the DistributedLog API docs will be added here.</p>
@@ -566,7 +628,7 @@ If you're using [Maven](https://maven.apache.org/), add this to your [`pom.xml`]
 
 ```xml
 <-- in your <properties> block ->
-<bookkeeper.version>0.5.0</bookkeeper.version>
+<bookkeeper.version>4.10.0</bookkeeper.version>
 
 <-- in your <dependencies> block ->
 <dependency>
@@ -924,6 +986,13 @@ TODO: Reader API
 
 </div>
 
+<div id="striped-popover-html" class="popover-template">
+  <p>Striping is the process of distributing BookKeeper ledgers to sub-groups of bookies rather than to all bookies in a BookKeeper ensemble.</p>
+
+<p>Striping is essential to ensuring fast performance.</p>
+
+</div>
+
 <div id="journal-popover-html" class="popover-template">
   <p>A journal file stores BookKeeper transaction logs.</p>
 
@@ -972,6 +1041,12 @@ tippy('#striping-popover', {
   animation: 'fade'
 });
 
+tippy('#striped-popover', {
+  html: '#striped-popover-html',
+  arrow: true,
+  animation: 'fade'
+});
+
 tippy('#journal-popover', {
   html: '#journal-popover-html',
   arrow: true,
@@ -998,7 +1073,10 @@ tippy('#record-popover', {
   <div class="container">
     <div class="content has-text-centered">
       <p>
-        Copyright &copy; 2016 - 2018 <a href="https://www.apache.org/">The Apache Software Foundation</a>,<br /> licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, version 2.0</a>.
+        Copyright &copy; 2016 - 2020 <a href="https://www.apache.org/">The Apache Software Foundation</a>,<br /> licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, version 2.0</a>.
+      </p>
+      <p>
+        Apache BookKeeper, BookKeeper®, Apache®, the Apache feature logo, and the Apache BookKeeper logo are either registered trademarks or trademarks of The Apache Software Foundation.
       </p>
     </div>
   </div>
