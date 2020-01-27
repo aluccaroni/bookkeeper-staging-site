@@ -581,24 +581,24 @@ It allows user passing in an <code class="highlighter-rouge">entryId</code> when
 <p>Here’s an exmaple:</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">byte</span><span class="o">[]</span> <span class="n">passwd</span> <span class="o">=</span> <span class="s">"some-passwd"</span><span class="o">.</span><span class="na">getBytes</span><span class="o">();</span>
-<span class="n">LedgerHandleAdv</span> <span class="n">handle</span> <span class="o">=</span> <span class="n">bkClient</span><span class="o">.</span><span class="na">createLedgerAdv</span><span class="o">(</span>
+<span class="nc">LedgerHandleAdv</span> <span class="n">handle</span> <span class="o">=</span> <span class="n">bkClient</span><span class="o">.</span><span class="na">createLedgerAdv</span><span class="o">(</span>
     <span class="mi">3</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="c1">// replica settings</span>
-    <span class="n">DigestType</span><span class="o">.</span><span class="na">CRC32</span><span class="o">,</span>
+    <span class="nc">DigestType</span><span class="o">.</span><span class="na">CRC32</span><span class="o">,</span>
     <span class="n">passwd</span><span class="o">);</span>
 </code></pre></div></div>
 
 <p>You can also create advanced ledgers asynchronously.</p>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">LedgerCreationCallback</span> <span class="kd">implements</span> <span class="n">AsyncCallback</span><span class="o">.</span><span class="na">CreateCallback</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">createComplete</span><span class="o">(</span><span class="kt">int</span> <span class="n">returnCode</span><span class="o">,</span> <span class="n">LedgerHandle</span> <span class="n">handle</span><span class="o">,</span> <span class="n">Object</span> <span class="n">ctx</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Ledger successfully created"</span><span class="o">);</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">LedgerCreationCallback</span> <span class="kd">implements</span> <span class="nc">AsyncCallback</span><span class="o">.</span><span class="na">CreateCallback</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">createComplete</span><span class="o">(</span><span class="kt">int</span> <span class="n">returnCode</span><span class="o">,</span> <span class="nc">LedgerHandle</span> <span class="n">handle</span><span class="o">,</span> <span class="nc">Object</span> <span class="n">ctx</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Ledger successfully created"</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>
 <span class="n">client</span><span class="o">.</span><span class="na">asyncCreateLedgerAdv</span><span class="o">(</span>
         <span class="mi">3</span><span class="o">,</span> <span class="c1">// ensemble size</span>
         <span class="mi">3</span><span class="o">,</span> <span class="c1">// write quorum size</span>
         <span class="mi">2</span><span class="o">,</span> <span class="c1">// ack quorum size</span>
-        <span class="n">BookKeeper</span><span class="o">.</span><span class="na">DigestType</span><span class="o">.</span><span class="na">CRC32</span><span class="o">,</span>
+        <span class="nc">BookKeeper</span><span class="o">.</span><span class="na">DigestType</span><span class="o">.</span><span class="na">CRC32</span><span class="o">,</span>
         <span class="n">password</span><span class="o">,</span>
         <span class="k">new</span> <span class="nf">LedgerCreationCallback</span><span class="o">(),</span>
         <span class="s">"some context"</span>
@@ -610,10 +610,10 @@ It allows user passing in an <code class="highlighter-rouge">entryId</code> when
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">long</span> <span class="n">ledgerId</span> <span class="o">=</span> <span class="o">...;</span> <span class="c1">// the ledger id is generated externally.</span>
 
 <span class="kt">byte</span><span class="o">[]</span> <span class="n">passwd</span> <span class="o">=</span> <span class="s">"some-passwd"</span><span class="o">.</span><span class="na">getBytes</span><span class="o">();</span>
-<span class="n">LedgerHandleAdv</span> <span class="n">handle</span> <span class="o">=</span> <span class="n">bkClient</span><span class="o">.</span><span class="na">createLedgerAdv</span><span class="o">(</span>
+<span class="nc">LedgerHandleAdv</span> <span class="n">handle</span> <span class="o">=</span> <span class="n">bkClient</span><span class="o">.</span><span class="na">createLedgerAdv</span><span class="o">(</span>
     <span class="n">ledgerId</span><span class="o">,</span> <span class="c1">// ledger id generated externally</span>
     <span class="mi">3</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="c1">// replica settings</span>
-    <span class="n">DigestType</span><span class="o">.</span><span class="na">CRC32</span><span class="o">,</span>
+    <span class="nc">DigestType</span><span class="o">.</span><span class="na">CRC32</span><span class="o">,</span>
     <span class="n">passwd</span><span class="o">);</span>
 </code></pre></div></div>
 
@@ -625,12 +625,12 @@ a <a href="../javadoc/org/apache/bookkeeper/client/BKException.BKLedgerExistExce
 
 <p>Creating advanced ledgers can be done throught a fluent API since 4.6.</p>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">BookKeeper</span> <span class="n">bk</span> <span class="o">=</span> <span class="o">...;</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">BookKeeper</span> <span class="n">bk</span> <span class="o">=</span> <span class="o">...;</span>
 
 <span class="kt">byte</span><span class="o">[]</span> <span class="n">passwd</span> <span class="o">=</span> <span class="s">"some-passwd"</span><span class="o">.</span><span class="na">getBytes</span><span class="o">();</span>
 
-<span class="n">WriteHandle</span> <span class="n">wh</span> <span class="o">=</span> <span class="n">bk</span><span class="o">.</span><span class="na">newCreateLedgerOp</span><span class="o">()</span>
-    <span class="o">.</span><span class="na">withDigestType</span><span class="o">(</span><span class="n">DigestType</span><span class="o">.</span><span class="na">CRC32</span><span class="o">)</span>
+<span class="nc">WriteHandle</span> <span class="n">wh</span> <span class="o">=</span> <span class="n">bk</span><span class="o">.</span><span class="na">newCreateLedgerOp</span><span class="o">()</span>
+    <span class="o">.</span><span class="na">withDigestType</span><span class="o">(</span><span class="nc">DigestType</span><span class="o">.</span><span class="na">CRC32</span><span class="o">)</span>
     <span class="o">.</span><span class="na">withPassword</span><span class="o">(</span><span class="n">passwd</span><span class="o">)</span>
     <span class="o">.</span><span class="na">withEnsembleSize</span><span class="o">(</span><span class="mi">3</span><span class="o">)</span>
     <span class="o">.</span><span class="na">withWriteQuorumSize</span><span class="o">(</span><span class="mi">3</span><span class="o">)</span>
@@ -654,7 +654,7 @@ to advanced ledgers, an entry id is required to pass in along with the entry dat
 
 <p>If you are using the new API, you can do as following:</p>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">WriteHandle</span> <span class="n">wh</span> <span class="o">=</span> <span class="o">...;</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">WriteHandle</span> <span class="n">wh</span> <span class="o">=</span> <span class="o">...;</span>
 <span class="kt">long</span> <span class="n">entryId</span> <span class="o">=</span> <span class="o">...;</span> <span class="c1">// entry id generated externally</span>
 
 <span class="n">wh</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">entryId</span><span class="o">,</span> <span class="s">"Some entry data"</span><span class="o">.</span><span class="na">getBytes</span><span class="o">()).</span><span class="na">get</span><span class="o">();</span>
@@ -684,10 +684,13 @@ to advanced ledgers, an entry id is required to pass in along with the entry dat
 <div class="toc">
   <h2 class="title">The Advanced Ledger API</h2>
   <ul class="section-nav">
-<li class="toc-entry toc-h2"><a href="#ledgerhandleadv">LedgerHandleAdv</a></li>
+<li class="toc-entry toc-h2"><a href="#ledgerhandleadv">LedgerHandleAdv</a>
+<ul>
 <li class="toc-entry toc-h3"><a href="#creating-advanced-ledgers">Creating advanced ledgers</a></li>
 <li class="toc-entry toc-h3"><a href="#add-entries">Add Entries</a></li>
 <li class="toc-entry toc-h3"><a href="#read-entries">Read Entries</a></li>
+</ul>
+</li>
 </ul>
 </div>
 

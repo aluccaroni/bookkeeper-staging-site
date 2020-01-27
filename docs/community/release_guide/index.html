@@ -923,7 +923,7 @@ git push apache <span class="s2">"</span><span class="k">${</span><span class="n
 
 <p>Remove rc tags:</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for </span>num <span class="k">in</span> <span class="k">$(</span><span class="nb">seq </span>0 <span class="k">${</span><span class="nv">RC_NUM</span><span class="k">})</span><span class="p">;</span> <span class="k">do
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for </span>num <span class="k">in</span> <span class="si">$(</span><span class="nb">seq </span>0 <span class="k">${</span><span class="nv">RC_NUM</span><span class="k">}</span><span class="si">)</span><span class="p">;</span> <span class="k">do
     </span>git tag <span class="nt">-d</span> <span class="s2">"v</span><span class="k">${</span><span class="nv">VERSION</span><span class="k">}</span><span class="s2">-rc</span><span class="k">${</span><span class="nv">num</span><span class="k">}</span><span class="s2">"</span>
     git push apache :<span class="s2">"v</span><span class="k">${</span><span class="nv">VERSION</span><span class="k">}</span><span class="s2">-rc</span><span class="k">${</span><span class="nv">num</span><span class="k">}</span><span class="s2">"</span>
 <span class="k">done</span>
